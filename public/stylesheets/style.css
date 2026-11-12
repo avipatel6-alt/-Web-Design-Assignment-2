@@ -6,3 +6,28 @@ body {
 footer a {
   text-decoration: none;
 }
+
+:root {
+  --bg: #0f1117;      /* page background - pick your own */
+  --text: #e9ecf3;
+  --muted: #9aa3b5;
+  --accent: #4da3ff;  /* your main colour */
+}
+body { 
+  background: var(--bg); color: var(--text);
+  font-family: 'YourFont', sans-serif; 
+}
+
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); }
+
+/* custom button using your accent colour */
+.btn-accent {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+}
+.btn-accent:hover { filter: brightness(1.15); color: var(--bg); }
+
+/* big icon on the right side of the hero */
+.hero-icon { font-size: 10rem; color: var(--accent); opacity: .8; }
