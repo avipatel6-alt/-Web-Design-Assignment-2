@@ -1,15 +1,88 @@
 <%- include('partials/header', { title: title }) %>
 
-<h1>Projects</h1>
-<div class="row">
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Project One</h5>
-        <p class="card-text">Short description of the project.</p>
+<section class="container py-5">
+
+  <!-- ===== Page heading ===== -->
+  <p class="little-label">// selected work</p>
+  <h1 class="about-title">Things I've <span class="gradient-text">built</span></h1>
+  <p class="sub-intro mb-4">Projects and assignments I completed in previous semesters.</p>
+
+  <!-- ===== Project cards: Bootstrap grid, 2 per row on medium screens and up ===== -->
+  <div class="row g-4">
+
+    <!-- Card 1: Portfolio Website -->
+    <div class="col-md-6">
+      <div class="project-card h-100">
+        <div class="project-banner banner-green">
+          <span><i class="fa-solid fa-code me-3"></i>HTML&lt;/&gt;</span>
+        </div>
+        <div class="project-body">
+          <span class="project-type">Course project</span>
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-text">
+            Built from scratch with HTML5 and CSS3: semantic page structure, a shared header and navigation
+            on every page, a responsive grid layout, and embedded images and video. All styling lives in one
+            stylesheet so the site stays consistent and easy to update.
+          </p>
+        </div>
       </div>
     </div>
+
+    <!-- Card 2: Trading Indicator -->
+    <div class="col-md-6">
+      <div class="project-card h-100">
+        <div class="project-banner banner-blue">
+          <span><i class="fa-solid fa-chart-line me-3"></i>BUY / SELL</span>
+        </div>
+        <div class="project-body">
+          <span class="project-type">Personal project</span>
+          <h3 class="project-title">Crafting a Trading Indicator</h3>
+          <p class="project-text">
+            A custom indicator built on technical analysis principles that flags potential buy and sell signals
+            using rules-based conditions instead of gut feeling. I tested it against historical price data and
+            keep refining it as part of a disciplined, data-driven approach to risk.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Advanced Networking Topology -->
+    <div class="col-md-6">
+      <div class="project-card h-100">
+        <div class="project-banner banner-pink">
+          <span><i class="fa-solid fa-network-wired me-3"></i>BGP & OSPF</span>
+        </div>
+        <div class="project-body">
+          <span class="project-type">Group project</span>
+          <h3 class="project-title">Advanced Networking Topology</h3>
+          <p class="project-text">
+            A full model of an advanced network for a fictional company, integrating multiple protocols and
+            technologies to improve performance and security, including physical cabling and layout. We split
+            the design work, documented decisions, and verified every part worked as one network.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Enterprise Management -->
+    <div class="col-md-6">
+      <div class="project-card h-100">
+        <div class="project-banner banner-violet">
+          <span><i class="fa-solid fa-building me-3"></i>Enterprise</span>
+        </div>
+        <div class="project-body">
+          <span class="project-type">Group project</span>
+          <h3 class="project-title">Enterprise Management</h3>
+          <p class="project-text">
+            Designed and implemented an enterprise management system for a fictional company to streamline
+            business processes and bring day-to-day workflows into one organized system. We worked through
+            requirements, design and implementation together with shared responsibilities.
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
 
 <%- include('partials/footer') %>

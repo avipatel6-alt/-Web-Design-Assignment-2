@@ -61,4 +61,115 @@ body {
 .homepage-card { padding: 1.75rem; }                       /* space inside the box */
 .homepage-icon { font-size: 1.6rem; color: var(--accent); margin-bottom: 1rem; }
 .homepage-title { font-size: 1.15rem; font-weight: 600; margin-bottom: .5rem; }
-.homepage-card:hover .info-title { color: var(--accent); } /* text highlight on hover */
+
+
+/* about me page */
+/* ================= ABOUT PAGE ================= */
+
+/* Small monospace label above the title */
+.little-label {
+  font-family: 'Ithaca', monospace;
+  color: rgba(17, 255, 0, 0.789);
+  font-size: 0.8rem;
+  margin: 0.25rem;
+}
+
+.about-title {
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+/* Gradient-filled text: the gradient is clipped to the letter shapes */
+.gradient-text {
+  background: linear-gradient(90deg, rgba(255, 0, 195, 0.8), rgba(132, 0, 255, 0.8), rgba(255, 0, 195, 0.8));
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Bio --- */
+.lead-intro { font-size: 1.1rem; font-weight: 500; }
+.sub-intro  { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Gradient button with a glow that lifts on hover */
+.btn-glow {
+  color: var(--bg-dark);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.45rem 1rem;
+  box-shadow: 0 6px 24px rgba(134, 1, 97, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-glow:hover {
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 0, 183, 0.35);
+}
+
+
+/* --- Journey timeline --- */
+/* ::before on the list draws the vertical line; ::before on each item draws its dot */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 6px;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 2rem;
+}
+
+.timeline-year {
+  font-family: 'JetBrains Mono', monospace;
+  color: rgb(255, 0, 183);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.timeline-title { font-size: 1.05rem; font-weight: 600; margin: 0.15rem 0; }
+.timeline-text  { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+
+
+
+
+
+/* ================= PROJECTS PAGE ================= */
+
+/* Card shell: same glass look as the skill cards */
+.project-card {
+  border-radius: 14px;
+  overflow: hidden;            /* keeps the banner inside the rounded corners */
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.project-card:hover {
+  box-shadow: 0 0 28px rgba(255, 139, 163, 0.63);
+  transform: translateY(-5px);
+}
+
+/* Banner: big centred label with faint vertical stripes on top of a gradient */
+.project-banner {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.8rem;
+  color: #fff;
+  background-image:
+  repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 28px),
+  var(--banner);
+}
+
+/* One gradient per theme; the route picks which one each card uses */
+.banner-green  { --banner: linear-gradient(160deg, #34d399, #0f3d33 85%); }
+.banner-blue   { --banner: linear-gradient(160deg, #3b9cf6, #0f2a4d 85%); }
+.banner-pink   { --banner: linear-gradient(160deg, #f472b6, #3d1630 85%); }
+.banner-violet { --banner: linear-gradient(160deg, #8b7cf6, #251d4d 85%); }
+
+/* Card text */
+.project-body { 
+  padding: 1.25rem 1.25rem 1.5rem; 
+}
+
+

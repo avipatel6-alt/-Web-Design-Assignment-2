@@ -1,6 +1,59 @@
 <%- include('partials/header', { title: title }) %>
 
-<h1>About Me</h1>
-<p>Write a short intro: who you are, your program (Networking and Security at Ontario Tech), and your interests.</p>
+<!-- Full-width wrapper that draws the grid background and glow -->
+<div class="about-bg">
+    <section class="container py-5">
+
+    <!-- ===== Intro ===== -->
+    <p class="little-label">// about me</p>
+    <h1 class="about-title">The person behind the <span class="gradient-text">code</span></h1>
+
+    <!-- Bio text and call-to-action button -->
+    <div class="col-md-8">
+        <p class="lead-intro">
+            I'm a Networking and Security student at Ontario Tech who enjoys turning ideas into working, good-looking products.
+        </p>
+        <p class="sub-intro">
+            I like the whole stack: designing a layout, wiring up Express routes, and deploying it so real people can use it.
+            When I'm not coding, I'm probably breaking (and fixing) a home lab network.
+        </p>
+        <a href="/contact" class="btn btn-glow">
+          <i class="fa-solid fa-handshake me-2"></i>Work with me
+        </a>
+    </div>
+
+    </section>
+
+    <!-- ===== Journey timeline: one entry per item in the "journey" array from the route ===== -->
+    <h2 class="section-heading"><i class="fa-solid fa-route"></i> Journey</h2>
+    <ul class="timeline">
+        <li class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <h3 class="timeline-title">Computer Security</h3>
+        <p class="timeline-text">Learnt the fundamentals of computer security including encryption and basic topology setup.</p>
+        </li>
+
+        <li class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <h3 class="timeline-title">Change in program and university</h3>
+        <p class="timeline-text">Came to Ontario and changed my program to networking and security.</p>
+        </li>
+
+        <li class="timeline-item">
+        <span class="timeline-year">2023</span>
+        <h3 class="timeline-title">Started my degree in Ontario</h3>
+        <p class="timeline-text">I moved to Ontario from Manitoba to start Information technology at York University</p>
+        </li>
+        
+        <li class="timeline-item">
+        <span class="timeline-year">2022</span>
+        <h3 class="timeline-title">Computer Science and Calculus AP</h3>
+        <p class="timeline-text">As a high school student, I took Advanced Placement Computer Science and Calculus and scored a 5 on both exams.</p>
+        </li>
+    </ul>
+
+</div>
+
+
 
 <%- include('partials/footer') %>
