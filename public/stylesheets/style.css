@@ -17,9 +17,9 @@ body {
   background: var(--bg); color: var(--text);
   font-family: 'YourFont', sans-serif; 
 }
-
 .accent { color: var(--accent); }
 .muted  { color: var(--muted); }
+
 
 /* custom button using your accent colour */
 .btn-accent {
@@ -27,7 +27,38 @@ body {
   color: var(--bg);
   border: none;
 }
-.btn-accent:hover { filter: brightness(1.15); color: var(--bg); }
 
-/* big icon on the right side of the hero */
-.hero-icon { font-size: 10rem; color: var(--accent); opacity: .8; }
+
+/* code card + stat cards share the same "glass" look */
+.homepage-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  transition: border-color .3s, box-shadow .3s, background .3s; /* no transform = no push-in */
+}
+.homepage-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 24px -8px var(--accent);   /* soft glow around the border */
+  background: rgba(255,255,255,.06);
+}
+
+
+/* the code inside the card: padding = space between the text and the border */
+.homepage-card pre {
+  padding: 1.5rem 2rem;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 1rem;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+.homepage-card .k { color: #c792ea; }        /* keywords: for, in */
+.homepage-card .f { color: var(--accent); }  /* functions: range, print */
+.homepage-card .n { color: #f78c6c; }        /* numbers */
+.homepage-card .s { color: #ffd479; }        /* strings */
+.homepage-card .c { color: var(--muted); font-style: italic; } /* comment */
+
+/* bottom info cards */
+.homepage-card { padding: 1.75rem; }                       /* space inside the box */
+.homepage-icon { font-size: 1.6rem; color: var(--accent); margin-bottom: 1rem; }
+.homepage-title { font-size: 1.15rem; font-weight: 600; margin-bottom: .5rem; }
+.homepage-card:hover .info-title { color: var(--accent); } /* text highlight on hover */

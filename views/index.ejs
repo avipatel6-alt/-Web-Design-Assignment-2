@@ -1,20 +1,50 @@
 <%- include('partials/header', { title: title }) %>
 
-<h1>Home</h1>
-<p>Welcome to my portfolio.</p>
-
-<section class="row align-items-center py-5">
+<!-- HERO: intro text on the left, fake code card on the right -->
+<section class="row align-items-center g-5 py-5">
   <div class="col-lg-7">
-    <h1 class="display-4 fw-bold">Hi, I'm <span class="accent">Avi</span></h1>
-    <p class="lead">I'm Avi, a third-year Networking and IT Security student with a passion for cybersecurity. Outside of class, I research futures trading and compete as an Ontario provincial amateur Muay Thai fighter at 175 lb.</p>
-    <a href="/projects" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> My work</a>
-    <a href="/contact" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-envelope"></i> Contact</a>
-
+    <p class="eyebrow">Networking &amp; IT Security - Year 3</p>
+    <h1 class="display-4 fw-bold">Hi, I'm <span class="accent">Avi Patel</span>.</h1>
+    <p class="lead muted">I'm a third-year Networking and IT Security student with a passion for cybersecurity. Outside of class, I research futures trading and compete as an Ontario provincial amateur Muay Thai fighter at 175 lb.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="/about" class="btn btn-accent btn-lg"><i class="fa-solid fa-user me-2"></i>About me</a>
+      <a href="/contact" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-envelope me-2"></i>Contact</a>
+    </div>
   </div>
+
+  <!-- Decorative code card (no title bar) -->
   <div class="col-lg-5">
-    <i class="fa-solid fa-laptop-code hero-icon"></i>
+  <div class="homepage-card">
+  <pre class="mb-0"><code><span class="k">for</span> i <span class="k">in</span> <span class="f">range</span>(<span class="n">10</span>):
+  <span class="f">print</span>(<span class="s">"hello world"</span>)
+  <span class="c"># 3 years of school just to learn this</span></code></pre>
+    </div>
   </div>
 </section>
 
+<!-- HIGHLIGHT STATS -->
+<section class="row g-4 pb-5">
+  <div class="col-md-4">
+    <div class="homepage-card text-center">
+      <a href="/projects" class="btn btn-accent btn-lg"></a>
+      <div class="stat-number">Advanced Networking typology</div>
+      <div class="muted">Cabling an advanced network for a fictinal organization</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="homepage-card text-center">
+      <a href="/projects" class="btn btn-accent btn-lg"></a>
+      <div class="stat-number">Designing and backtesting strategies</div>
+      <div class="muted">Hand coding a trading view indicator/ strategy</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="homepage-card text-center">
+      <a href="/projects" class="btn btn-accent btn-lg"></a>
+      <div class="stat-number">Enterprise management</div>
+      <div class="muted">Designing an enterprise management system</div>
+    </div>
+  </div>
+</section>
 
 <%- include('partials/footer') %>
