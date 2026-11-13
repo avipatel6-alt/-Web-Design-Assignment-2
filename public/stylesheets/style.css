@@ -21,12 +21,6 @@ body {
 .muted  { color: var(--muted); }
 
 
-/* custom button using your accent colour */
-.btn-accent {
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-}
 
 
 /* code card + stat cards share the same "glass" look */
@@ -67,6 +61,7 @@ body {
 /* ================= ABOUT PAGE ================= */
 
 /* Small monospace label above the title */
+/* these will be used for all pages */
 .little-label {
   font-family: 'Ithaca', monospace;
   color: rgba(17, 255, 0, 0.789);
@@ -74,40 +69,43 @@ body {
   margin: 0.25rem;
 }
 
-.about-title {
+.page-title {
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
-/* Gradient-filled text: the gradient is clipped to the letter shapes */
+/* Gradient-filled text: the gradient is clipped to the letter shapes used for all pages */
 .gradient-text {
-  background: linear-gradient(90deg, rgba(255, 0, 195, 0.8), rgba(132, 0, 255, 0.8), rgba(255, 0, 195, 0.8));
+  background: linear-gradient(90deg, var(--mint), var(--violet), var(--pink));
   background-clip: text;
   color: transparent;
 }
 
-/* --- Bio --- */
+/* Bio */
 .lead-intro { font-size: 1.1rem; font-weight: 500; }
 .sub-intro  { color: var(--text-muted); font-size: 0.9rem; }
 
 /* Gradient button with a glow that lifts on hover */
-.btn-glow {
-  color: var(--bg-dark);
-  font-weight: 600;
-  border-radius: 10px;
-  padding: 0.45rem 1rem;
-  box-shadow: 0 6px 24px rgba(134, 1, 97, 0.35);
-  transition: transform 0.2s, box-shadow 0.2s;
+/* also used for the send button on the contact page */
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  border-radius: 999px;
+  width:200px; 
+  height:60px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #0b0b1a;
+  background: linear-gradient(90deg, #6ee7b7, #7dd3fc 50%, #8b7cf8);
+  box-shadow: 0 10px 30px rgba(139, 124, 248, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-glow:hover {
-  color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 0, 183, 0.35);
-}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(139, 124, 248, 0.55); }
 
 
-/* --- Journey timeline --- */
-/* ::before on the list draws the vertical line; ::before on each item draws its dot */
+/*Journey portion */
+/* adjusts the timeline and changes to the title, year and message */
 .timeline {
   list-style: none;
   padding-left: 0;
@@ -131,23 +129,20 @@ body {
 .timeline-text  { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
 
 
-
-
-
 /* ================= PROJECTS PAGE ================= */
-
-/* Card shell: same glass look as the skill cards */
+/* projectcard */
 .project-card {
   border-radius: 14px;
   overflow: hidden;            /* keeps the banner inside the rounded corners */
   transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
+/* transform and glow on hover */
 .project-card:hover {
   box-shadow: 0 0 28px rgba(255, 139, 163, 0.63);
   transform: translateY(-5px);
 }
 
-/* Banner: big centred label with faint vertical stripes on top of a gradient */
+/* Banner: big centred label ceentere ad the simbol*/
 .project-banner {
   height: 150px;
   display: flex;
@@ -161,15 +156,73 @@ body {
   var(--banner);
 }
 
-/* One gradient per theme; the route picks which one each card uses */
+/* different colors per card*/
 .banner-green  { --banner: linear-gradient(160deg, #34d399, #0f3d33 85%); }
 .banner-blue   { --banner: linear-gradient(160deg, #3b9cf6, #0f2a4d 85%); }
 .banner-pink   { --banner: linear-gradient(160deg, #f472b6, #3d1630 85%); }
 .banner-violet { --banner: linear-gradient(160deg, #8b7cf6, #251d4d 85%); }
 
-/* Card text */
+/* Card's text */
 .project-body { 
   padding: 1.25rem 1.25rem 1.5rem; 
 }
 
 
+/* ================= CONTACT PAGE ================= */
+:root {
+  --mint: #5eead4;
+  --violet: #a78bfa;
+  --pink: #f472b6;
+}
+
+.contact-lead { color: #a3a3c2; font-size: 1.2rem; max-width: 30rem; }
+
+/* Contact info keeps it in a list */
+.contact-list li { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+.contact-list a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 1rem; }
+.ci-icon {
+  width: 55px; height: 55px; border-radius: 14px;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--mint);
+}
+
+/* Form card: border with an internal background and glows when hovered */
+.contact-card {
+  padding: 3.5rem 3.75rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+.contact-card:hover { /*glows when hovered */
+  border-color: var(--mint);
+  box-shadow: 0 0 25px rgba(94, 234, 212, 0.35),
+              0 0 70px rgba(167, 139, 250, 0.25);
+  transform: translateY(-2px);
+}
+
+
+/* Inputs: keep glowing while focused and adds a background to the text blocks */
+.glow-input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: #fff;
+  padding: 0.9rem 1rem;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glow-input:hover { /* input box also glows when hovered */
+  border-color: var(--mint);
+  box-shadow: 0 0 25px rgba(94, 234, 213, 0.20);
+}
+.glow-input:focus { /* input box glows different when in focus */
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  border-color: var(--mint);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.25),
+              0 0 22px rgba(244, 114, 182, 0.45);
+}
