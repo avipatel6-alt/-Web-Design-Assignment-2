@@ -1,5 +1,5 @@
- Avi Patel – Portfolio Website
- INFR3120 – Web and Scripting Programming, Assignment 2
+Avi Patel – Portfolio Website
+INFR3120 – Web and Scripting Programming, Assignment 2
  
 Live site: https://avi-patel.onrender.com
 GitHub repo: https://github.com/avipatel6-alt/-Web-Design-Assignment-2
